@@ -1,0 +1,500 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05ab381f90ba2394bb06b778aa3f69c7, type: 3}
+  m_Name: Original
+  m_EditorClassIdentifier: 
+  nodeLinkDataSavables:
+  - outputGuid: b837f5ef-7b20-4070-9b8e-ad710c375b53
+    inputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+  - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+    inputGuid: f43235f5-9d87-4c3f-95ef-b80036c394c8
+  - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+    inputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+  - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+    inputGuid: 4c89ef5c-d501-4c2f-bad4-df54ab97158a
+  - outputGuid: f43235f5-9d87-4c3f-95ef-b80036c394c8
+    inputGuid: b67811d4-b2e6-4645-8e2b-23be94b7d51f
+  - outputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+    inputGuid: d2b02e70-a26c-4cab-b2e6-53a5a128f024
+  - outputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+    inputGuid: 32d59f56-f511-4019-b9d3-f9ecc1e261a8
+  - outputGuid: d2b02e70-a26c-4cab-b2e6-53a5a128f024
+    inputGuid: 2b2d28e4-f55f-4482-90f6-a8f0cd536b4b
+  - outputGuid: 32d59f56-f511-4019-b9d3-f9ecc1e261a8
+    inputGuid: 2b2d28e4-f55f-4482-90f6-a8f0cd536b4b
+  - outputGuid: b67811d4-b2e6-4645-8e2b-23be94b7d51f
+    inputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+  - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+    inputGuid: e2489253-0a07-409e-adf2-a85f20da839b
+  - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+    inputGuid: 3ee7f037-85a8-4f2d-baeb-d269313c6df5
+  - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+    inputGuid: a6307af5-87e1-4c76-84e1-f5cc4927f6dd
+  - outputGuid: e2489253-0a07-409e-adf2-a85f20da839b
+    inputGuid: c85d5333-07e2-4635-9c87-5d02a2366c44
+  - outputGuid: 3ee7f037-85a8-4f2d-baeb-d269313c6df5
+    inputGuid: 1ec3eb82-9c44-40ab-8641-281e3e417ae3
+  startNodeDataSavables:
+  - nodeGuid: b837f5ef-7b20-4070-9b8e-ad710c375b53
+    position: {x: 58, y: 130}
+  dialogueNodeDataSavables:
+  - nodeGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+    position: {x: 332, y: 130}
+    speakerName: Female
+    speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: Yes?
+    - languageType: 1
+      genericContent: TextBox_Ger
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+      inputGuid: f43235f5-9d87-4c3f-95ef-b80036c394c8
+      dataGuid: 6d6e9735-cf5e-4d59-a7e7-ca88fea89304
+      String_LGs:
+      - languageType: 0
+        genericContent: Who are you?
+      - languageType: 1
+        genericContent: D1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+    - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+      inputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+      dataGuid: 574f8074-6e88-49ca-a175-a5003bc3de60
+      String_LGs:
+      - languageType: 0
+        genericContent: I want to color stuff.
+      - languageType: 1
+        genericContent: D2
+      - languageType: 2
+        genericContent: Choice 2
+      - languageType: 3
+        genericContent: Choice 2
+      - languageType: 4
+        genericContent: Choice 2
+      - languageType: 5
+        genericContent: 
+    - outputGuid: 84d8d6ab-e802-436a-b092-151fc91c3c50
+      inputGuid: 4c89ef5c-d501-4c2f-bad4-df54ab97158a
+      dataGuid: 8d425dde-387d-4769-8b12-b587e8b013d4
+      String_LGs:
+      - languageType: 0
+        genericContent: Bye!
+      - languageType: 1
+        genericContent: D3
+      - languageType: 2
+        genericContent: Choice 3
+      - languageType: 3
+        genericContent: Choice 3
+      - languageType: 4
+        genericContent: Choice 3
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: f43235f5-9d87-4c3f-95ef-b80036c394c8
+    position: {x: 877.3333, y: -441.33334}
+    speakerName: Female
+    speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: 'I am a random Npc.
+
+        You?'
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: f43235f5-9d87-4c3f-95ef-b80036c394c8
+      inputGuid: b67811d4-b2e6-4645-8e2b-23be94b7d51f
+      dataGuid: f200cacf-d34f-423c-b618-22ac99de7b7f
+      String_LGs:
+      - languageType: 0
+        genericContent: Continue
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+    position: {x: 1808, y: -441.33334}
+    speakerName: Female
+    speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: 'I know right!?
+
+        Anything great happened to you recently?'
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+      inputGuid: d2b02e70-a26c-4cab-b2e6-53a5a128f024
+      dataGuid: 30cd0783-8197-4c1d-814a-58940d07e5c3
+      String_LGs:
+      - languageType: 0
+        genericContent: Yes!
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+    - outputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+      inputGuid: 32d59f56-f511-4019-b9d3-f9ecc1e261a8
+      dataGuid: a3ccebaf-4153-417d-915c-b37a1ce3f2c1
+      String_LGs:
+      - languageType: 0
+        genericContent: No!
+      - languageType: 1
+        genericContent: Choice 2
+      - languageType: 2
+        genericContent: Choice 2
+      - languageType: 3
+        genericContent: Choice 2
+      - languageType: 4
+        genericContent: Choice 2
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: d2b02e70-a26c-4cab-b2e6-53a5a128f024
+    position: {x: 2419.3333, y: -660.6666}
+    speakerName: Male
+    speakerSprite: {fileID: 21300000, guid: efef77012f91bd545ae21063b9a5fb88, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: 'I am having the best moment in my life!
+
+        I find a
+        partner that I really like! Not like you tho.'
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: d2b02e70-a26c-4cab-b2e6-53a5a128f024
+      inputGuid: 2b2d28e4-f55f-4482-90f6-a8f0cd536b4b
+      dataGuid: f69d79b7-3170-4603-8662-3509274d74f5
+      String_LGs:
+      - languageType: 0
+        genericContent: End
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+    position: {x: 877.3333, y: 152}
+    speakerName: Female
+    speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: What do you want to color?
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+      inputGuid: e2489253-0a07-409e-adf2-a85f20da839b
+      dataGuid: a6bd60bd-6d46-4b22-ade5-3ec893c11c0b
+      String_LGs:
+      - languageType: 0
+        genericContent: I want to color cube
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+    - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+      inputGuid: 3ee7f037-85a8-4f2d-baeb-d269313c6df5
+      dataGuid: 060934d0-6557-4dfc-9a8a-9e53ae3b59d3
+      String_LGs:
+      - languageType: 0
+        genericContent: I want to color capsule
+      - languageType: 1
+        genericContent: Choice 2
+      - languageType: 2
+        genericContent: Choice 2
+      - languageType: 3
+        genericContent: Choice 2
+      - languageType: 4
+        genericContent: Choice 2
+      - languageType: 5
+        genericContent: 
+    - outputGuid: 319b00db-bbb8-4883-9c8e-eacbce6d8686
+      inputGuid: a6307af5-87e1-4c76-84e1-f5cc4927f6dd
+      dataGuid: 4cf74be4-5820-459a-a121-723e9134f869
+      String_LGs:
+      - languageType: 0
+        genericContent: Sorry, it's nothing.
+      - languageType: 1
+        genericContent: Choice 3
+      - languageType: 2
+        genericContent: Choice 3
+      - languageType: 3
+        genericContent: Choice 3
+      - languageType: 4
+        genericContent: Choice 3
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: b67811d4-b2e6-4645-8e2b-23be94b7d51f
+    position: {x: 1320, y: -442}
+    speakerName: Male
+    speakerSprite: {fileID: 21300000, guid: efef77012f91bd545ae21063b9a5fb88, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: 'I am a random Npc too!
+
+        How small of a chance we can
+        meet up like this!?'
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: b67811d4-b2e6-4645-8e2b-23be94b7d51f
+      inputGuid: 79c98659-4245-4d4d-bba9-a408acd2ed68
+      dataGuid: 85d14346-3712-4b75-b615-c124938643c2
+      String_LGs:
+      - languageType: 0
+        genericContent: Continue
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+  - nodeGuid: 32d59f56-f511-4019-b9d3-f9ecc1e261a8
+    position: {x: 2419.3333, y: -238.66666}
+    speakerName: Male
+    speakerSprite: {fileID: 21300000, guid: efef77012f91bd545ae21063b9a5fb88, type: 3}
+    avatarDirectionType: 0
+    String_LGs:
+    - languageType: 0
+      genericContent: 'My life sucks!
+
+        Because of you!'
+    - languageType: 1
+      genericContent: 
+    - languageType: 2
+      genericContent: 
+    - languageType: 3
+      genericContent: 
+    - languageType: 4
+      genericContent: 
+    - languageType: 5
+      genericContent: 
+    AudioClip_LGs:
+    - languageType: 0
+      genericContent: {fileID: 0}
+    - languageType: 1
+      genericContent: {fileID: 0}
+    - languageType: 2
+      genericContent: {fileID: 0}
+    - languageType: 3
+      genericContent: {fileID: 0}
+    - languageType: 4
+      genericContent: {fileID: 0}
+    - languageType: 5
+      genericContent: {fileID: 0}
+    choiceDataList:
+    - outputGuid: 32d59f56-f511-4019-b9d3-f9ecc1e261a8
+      inputGuid: 2b2d28e4-f55f-4482-90f6-a8f0cd536b4b
+      dataGuid: f1072c41-7e58-431f-9cd7-3b1de3bf6d3a
+      String_LGs:
+      - languageType: 0
+        genericContent: End
+      - languageType: 1
+        genericContent: Choice 1
+      - languageType: 2
+        genericContent: Choice 1
+      - languageType: 3
+        genericContent: Choice 1
+      - languageType: 4
+        genericContent: Choice 1
+      - languageType: 5
+        genericContent: 
+  eventNodeDataSavables:
+  - nodeGuid: e2489253-0a07-409e-adf2-a85f20da839b
+    position: {x: 1320, y: 2.666666}
+    dialogueEvent: {fileID: 11400000, guid: 1e1b9516bac72ab41ab0ae24a5fd113b, type: 2}
+  - nodeGuid: 3ee7f037-85a8-4f2d-baeb-d269313c6df5
+    position: {x: 1320, y: 176}
+    dialogueEvent: {fileID: 11400000, guid: 53781452694ac9e4fa7cf253b53c08d7, type: 2}
+  endNodeDataSavables:
+  - nodeGuid: 2b2d28e4-f55f-4482-90f6-a8f0cd536b4b
+    position: {x: 3080, y: -382.6667}
+    endNodeType: 0
+  - nodeGuid: 4c89ef5c-d501-4c2f-bad4-df54ab97158a
+    position: {x: 877.3333, y: 672.6667}
+    endNodeType: 0
+  - nodeGuid: c85d5333-07e2-4635-9c87-5d02a2366c44
+    position: {x: 1808, y: 2.666666}
+    endNodeType: 1
+  - nodeGuid: 1ec3eb82-9c44-40ab-8641-281e3e417ae3
+    position: {x: 1808, y: 176}
+    endNodeType: 1
+  - nodeGuid: a6307af5-87e1-4c76-84e1-f5cc4927f6dd
+    position: {x: 1320, y: 426.66666}
+    endNodeType: 2
