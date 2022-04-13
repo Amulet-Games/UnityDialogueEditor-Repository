@@ -17,3 +17,25 @@
 	width : 100px;
 	margin : auto;
 }
+
+.eventNode_Box_Container {
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.eventNode_StringEvent_Text {
+	width : 200px;
+}
+
+.eventNode_StringEvent_Int {
+	width : 100px;
+}
+
+.eventNode_ScriptableEvent_Object {
+	width : 306px;
+	-unity-text-align: middle-left;
+}
+
+.eventNode_Event_RemoveBtn {
+
+}

@@ -193,9 +193,19 @@ namespace AG
         {
             EventNode eventNode = new EventNode(eventNodeData.position, editorWindow, this);
             eventNode.nodeGuid = eventNodeData.nodeGuid;
-            eventNode.dialogueEvent = eventNodeData.dialogueEvent;
 
-            eventNode.LoadValueIntoField();
+            int stringEventCount = eventNodeData.stringEventAddons.Count;
+            for (int i = 0; i < stringEventCount; i++)
+            {
+                eventNode.AddStringEvent(eventNodeData.stringEventAddons[i]);
+            }
+
+            int scriptableEventCount = eventNodeData.scriptableEventAddons.Count;
+            for (int i = 0; i < scriptableEventCount; i++)
+            {
+                eventNode.AddScriptableEvent(eventNodeData.scriptableEventAddons[i]);
+            }
+
             AddElement(eventNode);
         }
 

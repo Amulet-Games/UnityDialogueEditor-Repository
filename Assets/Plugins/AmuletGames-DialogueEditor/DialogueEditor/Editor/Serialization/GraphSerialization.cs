@@ -87,7 +87,7 @@ namespace AG
 
             void ClearSavableRecords()
             {
-                _dialogueContainerSO.nodeLinkDataSavables.Clear();
+                _dialogueContainerSO.nodeEdgeDataSavables.Clear();
             }
 
             void AddSavablesToRecords()
@@ -99,7 +99,7 @@ namespace AG
                     BaseNode outputNode = (BaseNode)connectedEdges[i].output.node;
                     BaseNode inputNode = (BaseNode)connectedEdges[i].input.node;
 
-                    _dialogueContainerSO.nodeLinkDataSavables.Add(new NodeLinkData
+                    _dialogueContainerSO.nodeEdgeDataSavables.Add(new NodeEdgeData
                     {
                         outputGuid = outputNode.nodeGuid,
                         inputGuid = inputNode.nodeGuid
@@ -214,7 +214,9 @@ namespace AG
             {
                 nodeGuid = _eventNode.nodeGuid,
                 position = _eventNode.GetPosition().position,
-                dialogueEvent = _eventNode.dialogueEvent
+
+                stringEventAddons = _eventNode.stringEventAddons,
+                scriptableEventAddons = _eventNode.scriptableEventAddons
             };
 
             return eventNodeData;
@@ -293,11 +295,11 @@ namespace AG
                 // If node IS NOT Dialogue Nodes. 
                 if ((nodes[i] is DialogueNode) == false)
                 {
-                    List<NodeLinkData> links = _containerSO.nodeLinkDataSavables.Where(edge => edge.outputGuid == nodes[i].nodeGuid).ToList();
+                    List<NodeEdgeData> edges = _containerSO.nodeEdgeDataSavables.Where(edge => edge.outputGuid == nodes[i].nodeGuid).ToList();
 
-                    for (int j = 0; j < links.Count; j++)
+                    for (int j = 0; j < edges.Count; j++)
                     {
-                        BaseNode _1stInputNode = nodes.First(node => node.nodeGuid == links[j].inputGuid);
+                        BaseNode _1stInputNode = nodes.First(node => node.nodeGuid == edges[j].inputGuid);
                         LinkNodesToTogether(nodes[i].outputContainer[j].Q<Port>(), (Port)_1stInputNode.inputContainer[0]);
                     }
                 }

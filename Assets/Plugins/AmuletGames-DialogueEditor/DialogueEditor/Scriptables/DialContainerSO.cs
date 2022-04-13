@@ -10,7 +10,7 @@ namespace AG
     [CreateAssetMenu(menuName = "Dialogue/New Dialogue Container")]
     public class DialContainerSO : ScriptableObject
     {
-        public List<NodeLinkData> nodeLinkDataSavables = new List<NodeLinkData>();
+        public List<NodeEdgeData> nodeEdgeDataSavables = new List<NodeEdgeData>();
 
         public List<StartNodeData> startNodeDataSavables = new List<StartNodeData>();
 
@@ -54,7 +54,7 @@ namespace AG
     }
 
     [Serializable]
-    public class NodeLinkData
+    public class NodeEdgeData
     {
         public string outputGuid;       // output node is the base node where this link originate from.
         public string inputGuid;        // input node is the target node where this link connects to.
@@ -84,11 +84,27 @@ namespace AG
         public List<ChoiceData> choiceDataList;
     }
 
+    #region Event Node.
     [Serializable]
     public class EventNodeData : BaseNodeData
     {
-        public DialEventSO dialogueEvent;
+        public List<StringEventAddon> stringEventAddons;
+        public List<ScriptableEventAddon> scriptableEventAddons;
     }
+
+    [Serializable]
+    public class StringEventAddon
+    {
+        public string stringText;
+        public int intText;
+    }
+
+    [Serializable]
+    public class ScriptableEventAddon
+    {
+        public DialEventSO dialEventSO;
+    }
+    #endregion
 
     [Serializable]
     public class EndNodeData : BaseNodeData

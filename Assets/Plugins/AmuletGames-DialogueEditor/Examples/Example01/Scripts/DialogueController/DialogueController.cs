@@ -84,8 +84,10 @@ namespace AG
 
         void RunEventNode(EventNodeData _eventNodeData)
         {
-            if (_eventNodeData.dialogueEvent != null)
-                _eventNodeData.dialogueEvent.Execute();
+            for (int i = 0; i < _eventNodeData.scriptableEventAddons.Count; i++)
+            {
+                _eventNodeData.scriptableEventAddons[i].dialEventSO.Execute();
+            }
 
             RunNodeByType(dialogueUtility.GetNextNodeData(_eventNodeData));
         }

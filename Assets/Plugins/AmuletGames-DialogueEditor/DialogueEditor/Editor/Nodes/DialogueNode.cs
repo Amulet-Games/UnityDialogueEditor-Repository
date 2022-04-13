@@ -333,7 +333,7 @@ namespace AG
         }
         #endregion
 
-        public Port AddChoicePort(BaseNode _baseNode, ChoiceData _existingChoiceData = null)
+        public Port AddChoicePort(BaseNode _baseNode, ChoiceData _savedChoiceData = null)
         {
             ChoiceData choiceData;
             Port choicePort;
@@ -392,20 +392,20 @@ namespace AG
 
             void SetupChoiceDataDetails()
             {
-                if (_existingChoiceData != null)
+                if (_savedChoiceData != null)
                 {
-                    choiceData.outputGuid = _existingChoiceData.outputGuid;
-                    choiceData.inputGuid = _existingChoiceData.inputGuid;
-                    choiceData.dataGuid = _existingChoiceData.dataGuid;
+                    choiceData.outputGuid = _savedChoiceData.outputGuid;
+                    choiceData.inputGuid = _savedChoiceData.inputGuid;
+                    choiceData.dataGuid = _savedChoiceData.dataGuid;
                     choicePort.name = choiceData.dataGuid;                              // Choice port's name needs to be the same as choice data's data guid.
 
-                    for (int i = 0; i < _existingChoiceData.String_LGs.Count; i++)
+                    for (int i = 0; i < _savedChoiceData.String_LGs.Count; i++)
                     {
                         choiceData.String_LGs.Find
                         (
-                            String_LG => String_LG.languageType == _existingChoiceData.String_LGs[i].languageType
+                            String_LG => String_LG.languageType == _savedChoiceData.String_LGs[i].languageType
                         )
-                        .genericContent = _existingChoiceData.String_LGs[i].genericContent;
+                        .genericContent = _savedChoiceData.String_LGs[i].genericContent;
                     }
                 }
             }
