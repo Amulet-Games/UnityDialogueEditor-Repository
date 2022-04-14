@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05ab381f90ba2394bb06b778aa3f69c7, type: 3}
-  m_Name: Original
+  m_Name: DialogueContainerSO
   m_EditorClassIdentifier: 
   nodeEdgeDataSavables:
   - outputNodeGuid: 6a9f09ae-c2fe-4fa8-bca2-60ca72da2070
@@ -37,6 +37,10 @@ MonoBehaviour:
     inputNodeGuid: 811b9b84-3e2b-4826-803c-e59a2b8af80d
     outputPortGuid: 103abafb-4b2c-4cff-aa73-162ebda30a90
     inputPortGuid: f1c3b41f-a5b2-4fa5-a811-217d60ab777b
+  - outputNodeGuid: 48ccee9d-b0cd-4663-a376-87c7d15f7edc
+    inputNodeGuid: d45b17a4-4c52-4025-8771-075f750ac826
+    outputPortGuid: 2dedec4e-4a38-4b10-ab3c-0c6362d6e4e9
+    inputPortGuid: 2f3184c4-d8dc-49c2-8627-5c5f5eed185a
   - outputNodeGuid: 34502468-78d6-40fc-a43e-6f32ccef1040
     inputNodeGuid: f1657bda-d506-42e7-96dd-0f091362187e
     outputPortGuid: 544d1fe9-9141-488b-9362-c7c1da61df05
@@ -61,10 +65,6 @@ MonoBehaviour:
     inputNodeGuid: 643255c4-c502-4c30-b439-33ea0e5b6615
     outputPortGuid: 943322cb-a8ef-4af4-a6df-be1cd15237d7
     inputPortGuid: 643255c4-c502-4c30-b439-33ea0e5b6615
-  - outputNodeGuid: 48ccee9d-b0cd-4663-a376-87c7d15f7edc
-    inputNodeGuid: d45b17a4-4c52-4025-8771-075f750ac826
-    outputPortGuid: 2dedec4e-4a38-4b10-ab3c-0c6362d6e4e9
-    inputPortGuid: 2f3184c4-d8dc-49c2-8627-5c5f5eed185a
   startNodeDataSavables:
   - nodeGuid: 6a9f09ae-c2fe-4fa8-bca2-60ca72da2070
     position: {x: -54, y: 1292.6666}
@@ -75,7 +75,6 @@ MonoBehaviour:
     speakerName: Female
     speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: 9bd48826-62da-4dd8-bcd6-0c4f5155053b
     String_LGs:
     - languageType: 0
       genericContent: Yes?
@@ -102,6 +101,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: 9bd48826-62da-4dd8-bcd6-0c4f5155053b
     choiceDataList:
     - outputGuid: 2ce8fb78-6837-431f-8b78-0aaf7a7c5e18
       inputGuid: 131bc0b4-6e8a-4b1d-b5f4-f2ba522dcf7b
@@ -156,7 +156,6 @@ MonoBehaviour:
     speakerName: 
     speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: 038e905e-230e-4d7c-8e9d-f0fbba867ba0
     String_LGs:
     - languageType: 0
       genericContent: 
@@ -183,6 +182,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: 038e905e-230e-4d7c-8e9d-f0fbba867ba0
     choiceDataList:
     - outputGuid: 48ccee9d-b0cd-4663-a376-87c7d15f7edc
       inputGuid: d45b17a4-4c52-4025-8771-075f750ac826
@@ -237,7 +237,6 @@ MonoBehaviour:
     speakerName: Male
     speakerSprite: {fileID: 21300000, guid: efef77012f91bd545ae21063b9a5fb88, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: b91b1800-753a-4b63-b233-cfc82ce9ac5d
     String_LGs:
     - languageType: 0
       genericContent: 'I am a random Npc too!
@@ -267,6 +266,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: b91b1800-753a-4b63-b233-cfc82ce9ac5d
     choiceDataList:
     - outputGuid: 34502468-78d6-40fc-a43e-6f32ccef1040
       inputGuid: f1657bda-d506-42e7-96dd-0f091362187e
@@ -289,7 +289,6 @@ MonoBehaviour:
     speakerName: Female
     speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: f25587bc-3fb7-4b4f-b883-4033e4be9376
     String_LGs:
     - languageType: 0
       genericContent: 'I am a random Npc.
@@ -318,6 +317,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: f25587bc-3fb7-4b4f-b883-4033e4be9376
     choiceDataList:
     - outputGuid: 131bc0b4-6e8a-4b1d-b5f4-f2ba522dcf7b
       inputGuid: 34502468-78d6-40fc-a43e-6f32ccef1040
@@ -340,7 +340,6 @@ MonoBehaviour:
     speakerName: Female
     speakerSprite: {fileID: 21300000, guid: be4a07f758820ff4c88b1eb074df23fd, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: f7c63f2d-d536-477a-bafb-c73b8c040784
     String_LGs:
     - languageType: 0
       genericContent: 'I know right!?
@@ -369,6 +368,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: f7c63f2d-d536-477a-bafb-c73b8c040784
     choiceDataList:
     - outputGuid: f1657bda-d506-42e7-96dd-0f091362187e
       inputGuid: 3a120176-dee5-4899-aafb-d71b323d2133
@@ -391,7 +391,6 @@ MonoBehaviour:
     speakerName: Male
     speakerSprite: {fileID: 21300000, guid: efef77012f91bd545ae21063b9a5fb88, type: 3}
     avatarDirectionType: 0
-    inputPortGuid: a40e0837-9144-40f2-9549-9522ecf0d3ed
     String_LGs:
     - languageType: 0
       genericContent: 'I am having the best moment in my life!
@@ -421,6 +420,7 @@ MonoBehaviour:
       genericContent: {fileID: 0}
     - languageType: 5
       genericContent: {fileID: 0}
+    inputPortGuid: a40e0837-9144-40f2-9549-9522ecf0d3ed
     choiceDataList:
     - outputGuid: 3a120176-dee5-4899-aafb-d71b323d2133
       inputGuid: 648b270d-d99c-4f7d-8ef8-da38dfcb143c
@@ -453,6 +453,7 @@ MonoBehaviour:
     stringEventAddons: []
     scriptableEventAddons:
     - dialEventSO: {fileID: 11400000, guid: 1e1b9516bac72ab41ab0ae24a5fd113b, type: 2}
+  branchNodeDataSavables: []
   endNodeDataSavables:
   - nodeGuid: 9d1d8b32-62d0-46b4-b275-623f62bf8d14
     position: {x: 881.3333, y: 1893.3333}

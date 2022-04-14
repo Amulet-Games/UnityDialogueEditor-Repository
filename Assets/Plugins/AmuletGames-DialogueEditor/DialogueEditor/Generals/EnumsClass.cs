@@ -37,6 +37,7 @@ namespace AG
         Start,          // Green        Color(0.29f, 1, 0.34f)
         Dialogue,       // Red          Color(1, 0.29f, 0.29f)
         Event,          // Purple       Color(0.89f, 0.29f, 1)
+        Branch,         // Yellow       Color(1, 0.98f, 1f)
         End             // Green        Color(0.29f, 1, 0.34f)
     }
 }

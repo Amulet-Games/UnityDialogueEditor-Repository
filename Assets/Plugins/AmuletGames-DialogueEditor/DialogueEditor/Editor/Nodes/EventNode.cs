@@ -14,12 +14,12 @@ namespace AG
         public Port inputPort;
         public Port outputPort;
 
-        [Header("Events")]
+        [Header("Addons")]
         public List<StringEventAddon> stringEventAddons = new List<StringEventAddon>();
         public List<ScriptableEventAddon> scriptableEventAddons = new List<ScriptableEventAddon>();
 
         [Header("USS.")]
-        private string eventNode_Box_Container = "eventNode_Box_Container";
+        private string eventNode_BoxContainer = "eventNode_BoxContainer";
         private string eventNode_StringEvent_Text = "eventNode_StringEvent_Text";
         private string eventNode_StringEvent_Int = "eventNode_StringEvent_Int";
         private string eventNode_ScriptableEvent_Object = "eventNode_ScriptableEvent_Object";
@@ -60,8 +60,8 @@ namespace AG
                 ToolbarMenu dropdownMenu = new ToolbarMenu();
                 dropdownMenu.text = "Add Event";
 
-                dropdownMenu.menu.AppendAction("String ID", new Action<DropdownMenuAction>(x => AddStringEvent()));
-                dropdownMenu.menu.AppendAction("Scriptable Object", new Action<DropdownMenuAction>(x => AddScriptableEvent()));
+                dropdownMenu.menu.AppendAction("String Event", new Action<DropdownMenuAction>(x => AddStringEvent()));
+                dropdownMenu.menu.AppendAction("Scriptable Event", new Action<DropdownMenuAction>(x => AddScriptableEvent()));
 
                 titleContainer.Add(dropdownMenu);
             }
@@ -129,7 +129,7 @@ namespace AG
             void CreateContainerForFields()
             {
                 boxContainer = new Box();
-                boxContainer.AddToClassList(eventNode_Box_Container);
+                boxContainer.AddToClassList(eventNode_BoxContainer);
             }
 
             void SetupTextField()
@@ -225,7 +225,7 @@ namespace AG
             void CreateContainerForFields()
             {
                 boxContainer = new Box();
-                boxContainer.AddToClassList(eventNode_Box_Container);
+                boxContainer.AddToClassList(eventNode_BoxContainer);
             }
 
             void SetupObjectField()
@@ -270,10 +270,10 @@ namespace AG
             }
         }
 
-        void DeleteEventBoxContainer(Box boxContainer)
+        void DeleteEventBoxContainer(Box _boxContainer)
         {
-            // Remove the box container from the main container
-            mainContainer.Remove(boxContainer);
+            // Remove the box container from the main container.
+            mainContainer.Remove(_boxContainer);
             
             // Refresh this changes visually.
             RefreshExpandedState();

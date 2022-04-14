@@ -1487,6 +1487,7 @@ MonoBehaviour:
     avatarDirectionType: 0
     String_LGs: []
     AudioClip_LGs: []
+    inputPortGuid: 
     choiceDataList: []
   prev_DialogueNodeData:
     nodeGuid: 
@@ -1496,6 +1497,7 @@ MonoBehaviour:
     avatarDirectionType: 0
     String_LGs: []
     AudioClip_LGs: []
+    inputPortGuid: 
     choiceDataList: []
 --- !u!4 &759599112
 Transform:

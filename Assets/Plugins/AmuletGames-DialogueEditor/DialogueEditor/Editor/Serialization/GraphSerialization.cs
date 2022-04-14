@@ -123,6 +123,7 @@ namespace AG
                 _dialogueContainerSO.startNodeDataSavables.Clear();
                 _dialogueContainerSO.dialogueNodeDataSavables.Clear();
                 _dialogueContainerSO.eventNodeDataSavables.Clear();
+                _dialogueContainerSO.branchNodeDataSavables.Clear();
                 _dialogueContainerSO.endNodeDataSavables.Clear();
             }
 
@@ -141,6 +142,9 @@ namespace AG
                             break;
                         case EventNode node:
                             _dialogueContainerSO.eventNodeDataSavables.Add(SaveEventNodeData(node));
+                            break;
+                        case BranchNode node:
+                            _dialogueContainerSO.branchNodeDataSavables.Add(SaveBranchNodeData(node));
                             break;
                         case EndNode node:
                             _dialogueContainerSO.endNodeDataSavables.Add(SaveEndNodeData(node));
@@ -231,6 +235,29 @@ namespace AG
             return eventNodeData;
         }
 
+        BranchNodeData SaveBranchNodeData(BranchNode _branchNode)
+        {
+            Edge trueOutputPortEdge = edges.FirstOrDefault(x => x.output.node == _branchNode && x.output.portName == "True");
+            Edge falseOutputPortEdge = edges.FirstOrDefault(x => x.output.node == _branchNode && x.output.portName == "False");
+
+            BranchNodeData branchNodeData = new BranchNodeData()
+            {
+                nodeGuid = _branchNode.nodeGuid,
+                position = _branchNode.GetPosition().position,
+
+                inputPortGuid = _branchNode.inputPort.name,
+                trueOutputPortGuid = _branchNode.trueOutputPort.name,
+                falseOutputPortGuid = _branchNode.falseOutputPort.name,
+
+                trueOutputNodeGuid = trueOutputPortEdge != null ? (trueOutputPortEdge.input.node as BaseNode).nodeGuid : string.Empty,
+                falseOutputNodeGuid = falseOutputPortEdge != null ? (falseOutputPortEdge.input.node as BaseNode).nodeGuid : string.Empty,
+
+                stringConditionAddons = _branchNode.stringConditionAddons
+            };
+
+            return branchNodeData;
+        }
+
         EndNodeData SaveEndNodeData(EndNode _endNode)
         {
             EndNodeData endNodeData = new EndNodeData()
@@ -254,6 +281,8 @@ namespace AG
             LoadDialogueNode();
 
             LoadEventNode();
+
+            LoadBranchNode();
 
             LoadEndNode();
 
@@ -281,6 +310,15 @@ namespace AG
                 for (int i = 0; i < eventNodeSavableCount; i++)
                 {
                     graphView.LoadEventNode(_containerSO.eventNodeDataSavables[i]);
+                }
+            }
+
+            void LoadBranchNode()
+            {
+                int branchNodeSavableCount = _containerSO.branchNodeDataSavables.Count;
+                for (int i = 0; i < branchNodeSavableCount; i++)
+                {
+                    graphView.LoadBranchNode(_containerSO.branchNodeDataSavables[i]);
                 }
             }
 

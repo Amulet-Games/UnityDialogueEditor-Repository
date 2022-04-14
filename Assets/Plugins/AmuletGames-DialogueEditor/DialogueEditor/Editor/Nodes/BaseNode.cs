@@ -109,6 +109,8 @@ namespace AG
                     return new Color(0.29f, 1, 0.34f);
                 case N_NodeTypeEnum.Dialogue:
                     return new Color(1, 0.29f, 0.29f);
+                case N_NodeTypeEnum.Branch:
+                    return new Color(1, 0.98f, 0f);
                 case N_NodeTypeEnum.Event:
                     return new Color(0.89f, 0.29f, 1);
                 default:

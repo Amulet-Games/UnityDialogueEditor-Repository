@@ -17,6 +17,8 @@ namespace AG
 
         public List<EventNodeData> eventNodeDataSavables = new List<EventNodeData>();
 
+        public List<BranchNodeData> branchNodeDataSavables = new List<BranchNodeData>();
+
         public List<EndNodeData> endNodeDataSavables = new List<EndNodeData>();
 
         public List<BaseNodeData> AllNodeDataSavables
@@ -28,6 +30,7 @@ namespace AG
                 allNodeDataSavables.AddRange(startNodeDataSavables);
                 allNodeDataSavables.AddRange(dialogueNodeDataSavables);
                 allNodeDataSavables.AddRange(eventNodeDataSavables);
+                allNodeDataSavables.AddRange(branchNodeDataSavables);
                 allNodeDataSavables.AddRange(endNodeDataSavables);
 
                 return allNodeDataSavables;
@@ -55,9 +58,11 @@ namespace AG
     [Serializable]
     public class NodeEdgeData
     {
+        [Header("Nodes Guid")]
         public string outputNodeGuid;           // output node is the base node where this edge originate from.
         public string inputNodeGuid;            // input node is the target node where this edge connects to.
 
+        [Header("Ports Guid")]
         public string outputPortGuid;           // output port is the port that this edge started.
         public string inputPortGuid;            // output port is the port that this edge connects to.
     }
@@ -65,6 +70,7 @@ namespace AG
     [Serializable]
     public class BaseNodeData
     {
+        [Header("Base Details")]
         public string nodeGuid;
         public Vector2 position;
     }
@@ -72,23 +78,26 @@ namespace AG
     [Serializable]
     public class StartNodeData : BaseNodeData
     {
-        [Space(10)]
+        [Header("Port Guid")]
         public string outputPortGuid;
     }
 
     [Serializable]
     public class DialogueNodeData : BaseNodeData
     {
+        [Header("Node Details")]
         public string speakerName;
         public Sprite speakerSprite;
         public N_AvatarDirectionTypeEnum avatarDirectionType;
 
-        [Space(10)]
-        public string inputPortGuid;
-
-        [Space(10)]
+        [Header("LGs")]
         public List<LanguageGeneric<string>> String_LGs;
         public List<LanguageGeneric<AudioClip>> AudioClip_LGs;
+
+        [Header("Port Guid")]
+        public string inputPortGuid;
+
+        [Header("Choices")]
         public List<ChoiceData> choiceDataList;
     }
 
@@ -96,11 +105,11 @@ namespace AG
     [Serializable]
     public class EventNodeData : BaseNodeData
     {
-        [Space(10)]
+        [Header("Ports Guid")]
         public string outputPortGuid;
         public string inputPortGuid;
 
-        [Space(10)]
+        [Header("Addons")]
         public List<StringEventAddon> stringEventAddons;
         public List<ScriptableEventAddon> scriptableEventAddons;
     }
@@ -119,13 +128,38 @@ namespace AG
     }
     #endregion
 
+    #region Branch Node.
+    [Serializable]
+    public class BranchNodeData : BaseNodeData
+    {
+        [Header("Ports Guid")]
+        public string inputPortGuid;
+        public string trueOutputPortGuid;
+        public string falseOutputPortGuid;
+
+        [Header("Nodes Guid")]
+        public string trueOutputNodeGuid;
+        public string falseOutputNodeGuid;
+
+        [Header("Addons")]
+        public List<StringConditionAddon> stringConditionAddons;
+    }
+
+    [Serializable]
+    public class StringConditionAddon
+    {
+        public string stringText;
+        public int intText;
+    }
+    #endregion
+
     [Serializable]
     public class EndNodeData : BaseNodeData
     {
-        [Space(10)]
+        [Header("Port Guid")]
         public string inputPortGuid;
 
-        [Space(10)]
+        [Header("Ending Type")]
         public N_EndNodeTypeEnum endNodeType;
     }
 }

@@ -18,7 +18,7 @@
 	margin : auto;
 }
 
-.eventNode_Box_Container {
+.eventNode_BoxContainer {
 	flex-direction: row;
 	justify-content: space-between;
 }
@@ -36,6 +36,15 @@
 	-unity-text-align: middle-left;
 }
 
-.eventNode_Event_RemoveBtn {
+.branchNode_BoxContainer {
+	flex-direction: row;
+	justify-content: space-between;
+}
 
+.branchNode_StringCondition_Text {
+	width : 200px;
+}
+
+.eventNode_StringEvent_Int {
+	width : 100px;
 }

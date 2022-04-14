@@ -40,6 +40,7 @@ namespace AG
                 AddNodeSearch("Start Node", new StartNode()),
                 AddNodeSearch("Dialogue Node", new DialogueNode()),
                 AddNodeSearch("Event Node", new EventNode()),
+                AddNodeSearch("Branch Node", new BranchNode()),
                 AddNodeSearch("End Node", new EndNode())
             };
 
@@ -85,6 +86,9 @@ namespace AG
                     return true;
                 case EventNode node:
                     graphView.CreateEventNode(_pos);
+                    return true;
+                case BranchNode node:
+                    graphView.CreateBranchNode(_pos);
                     return true;
                 case EndNode node:
                     graphView.CreateEndNode(_pos);

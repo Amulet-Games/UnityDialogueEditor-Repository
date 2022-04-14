@@ -131,6 +131,11 @@ namespace AG
             AddElement(new EventNode(position, editorWindow, this));
         }
 
+        public void CreateBranchNode(Vector2 position)
+        {
+            AddElement(new BranchNode(position, editorWindow, this));
+        }
+
         public void CreateEndNode(Vector2 position)
         {
             AddElement(new EndNode(position, editorWindow, this));
@@ -213,6 +218,24 @@ namespace AG
             }
 
             AddElement(eventNode);
+        }
+
+        public void LoadBranchNode(BranchNodeData branchNodeData)
+        {
+            BranchNode branchNode = new BranchNode(branchNodeData.position, editorWindow, this);
+            branchNode.nodeGuid = branchNodeData.nodeGuid;
+
+            branchNode.inputPort.name = branchNodeData.nodeGuid;
+            branchNode.trueOutputPort.name = branchNodeData.trueOutputPortGuid;
+            branchNode.falseOutputPort.name = branchNodeData.falseOutputPortGuid;
+
+            int stringConditionCount = branchNodeData.stringConditionAddons.Count;
+            for (int i = 0; i < stringConditionCount; i++)
+            {
+                branchNode.AddStringCondition(branchNodeData.stringConditionAddons[i]);
+            }
+
+            AddElement(branchNode);
         }
 
         public void LoadEndNode(EndNodeData endNodeData)
