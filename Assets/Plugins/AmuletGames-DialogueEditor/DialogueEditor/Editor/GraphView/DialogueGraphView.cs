@@ -142,6 +142,7 @@ namespace AG
         {
             StartNode startNode = new StartNode(startNodeData.position, editorWindow, this);
             startNode.nodeGuid = startNodeData.nodeGuid;
+            startNode.outputPort.name = startNodeData.outputPortGuid;
 
             AddElement(startNode);
         }
@@ -157,6 +158,8 @@ namespace AG
             void LoadDialogueNodeData()
             {
                 dialogueNode.nodeGuid = dialogueNodeData.nodeGuid;
+                dialogueNode.inputPort.name = dialogueNodeData.inputPortGuid;
+
                 dialogueNode.speakerName = dialogueNodeData.speakerName;
                 dialogueNode.speakerSprite = dialogueNodeData.speakerSprite;
                 dialogueNode.avatarDirectionType = dialogueNodeData.avatarDirectionType;
@@ -192,7 +195,10 @@ namespace AG
         public void LoadEventNode(EventNodeData eventNodeData)
         {
             EventNode eventNode = new EventNode(eventNodeData.position, editorWindow, this);
+
             eventNode.nodeGuid = eventNodeData.nodeGuid;
+            eventNode.inputPort.name = eventNodeData.inputPortGuid;
+            eventNode.outputPort.name = eventNodeData.outputPortGuid;
 
             int stringEventCount = eventNodeData.stringEventAddons.Count;
             for (int i = 0; i < stringEventCount; i++)
@@ -213,6 +219,8 @@ namespace AG
         {
             EndNode endNode = new EndNode(endNodeData.position, editorWindow, this);
             endNode.nodeGuid = endNodeData.nodeGuid;
+            endNode.inputPort.name = endNodeData.nodeGuid;
+
             endNode.endNodeType = endNodeData.endNodeType;
 
             endNode.LoadValueIntoField();

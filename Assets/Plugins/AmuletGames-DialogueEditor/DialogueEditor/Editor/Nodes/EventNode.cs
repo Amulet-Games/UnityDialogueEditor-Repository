@@ -10,6 +10,10 @@ namespace AG
 {
     public class EventNode : BaseNode
     {
+        [Header("Ports")]
+        public Port inputPort;
+        public Port outputPort;
+
         [Header("Events")]
         public List<StringEventAddon> stringEventAddons = new List<StringEventAddon>();
         public List<ScriptableEventAddon> scriptableEventAddons = new List<ScriptableEventAddon>();
@@ -64,8 +68,8 @@ namespace AG
 
             void AddPorts()
             {
-                AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.Event);
-                AddOutputPort("Output", Port.Capacity.Single, N_NodeTypeEnum.Event);
+                inputPort = AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.Event);
+                outputPort = AddOutputPort("Output", Port.Capacity.Single, N_NodeTypeEnum.Event);
             }
 
             void FinishNodeSetup()

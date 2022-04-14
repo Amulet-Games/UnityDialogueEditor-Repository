@@ -4,7 +4,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace AG
 {
@@ -96,13 +95,16 @@ namespace AG
 
                 for (int i = 0; i < connectedEdges.Length; i++)
                 {
-                    BaseNode outputNode = (BaseNode)connectedEdges[i].output.node;
-                    BaseNode inputNode = (BaseNode)connectedEdges[i].input.node;
+                    Port connectedOutput = connectedEdges[i].output;
+                    Port connectedInput = connectedEdges[i].input;
 
                     _dialogueContainerSO.nodeEdgeDataSavables.Add(new NodeEdgeData
                     {
-                        outputGuid = outputNode.nodeGuid,
-                        inputGuid = inputNode.nodeGuid
+                        outputNodeGuid = ((BaseNode)connectedOutput.node).nodeGuid,
+                        inputNodeGuid = ((BaseNode)connectedInput.node).nodeGuid,
+
+                        outputPortGuid = connectedOutput.name,
+                        inputPortGuid = connectedInput.name
                     });
                 }
             }
@@ -153,7 +155,9 @@ namespace AG
             StartNodeData startNodeData = new StartNodeData()
             {
                 nodeGuid = _startNode.nodeGuid,
-                position = _startNode.GetPosition().position
+                position = _startNode.GetPosition().position,
+
+                outputPortGuid = _startNode.outputPort.name
             };
 
             return startNodeData;
@@ -174,6 +178,8 @@ namespace AG
                 dialogueNodeData = new DialogueNodeData();
                 dialogueNodeData.nodeGuid = _dialogueNode.nodeGuid;
                 dialogueNodeData.position = _dialogueNode.GetPosition().position;
+
+                dialogueNodeData.inputPortGuid = _dialogueNode.inputPort.name;
 
                 dialogueNodeData.speakerName = _dialogueNode.speakerName;
                 dialogueNodeData.speakerSprite = _dialogueNode.speakerSprite;
@@ -215,6 +221,9 @@ namespace AG
                 nodeGuid = _eventNode.nodeGuid,
                 position = _eventNode.GetPosition().position,
 
+                inputPortGuid = _eventNode.inputPort.name,
+                outputPortGuid = _eventNode.outputPort.name,
+
                 stringEventAddons = _eventNode.stringEventAddons,
                 scriptableEventAddons = _eventNode.scriptableEventAddons
             };
@@ -228,6 +237,8 @@ namespace AG
             {
                 nodeGuid = _endNode.nodeGuid,
                 position = _endNode.GetPosition().position,
+
+                inputPortGuid = _endNode.inputPort.name,
                 endNodeType = _endNode.endNodeType
             };
 
@@ -292,48 +303,24 @@ namespace AG
             int nodesCount = nodes.Count;
             for (int i = 0; i < nodesCount; i++)
             {
-                // If node IS NOT Dialogue Nodes. 
-                if ((nodes[i] is DialogueNode) == false)
+                // Get all the edges that come from this node 
+                List<NodeEdgeData> edges = _containerSO.nodeEdgeDataSavables.Where(edge => edge.outputNodeGuid == nodes[i].nodeGuid).ToList();
+
+                // Get all the output ports from this node.
+                List<Port> outputPorts = nodes[i].outputContainer.Children().Where(x => x is Port).Cast<Port>().ToList();
+
+                for (int j = 0; j < edges.Count; j++)
                 {
-                    List<NodeEdgeData> edges = _containerSO.nodeEdgeDataSavables.Where(edge => edge.outputGuid == nodes[i].nodeGuid).ToList();
+                    BaseNode _1stInputNode = nodes.First(node => node.nodeGuid == edges[j].inputNodeGuid);
 
-                    for (int j = 0; j < edges.Count; j++)
+                    if (_1stInputNode != null)
                     {
-                        BaseNode _1stInputNode = nodes.First(node => node.nodeGuid == edges[j].inputGuid);
-                        LinkNodesToTogether(nodes[i].outputContainer[j].Q<Port>(), (Port)_1stInputNode.inputContainer[0]);
-                    }
-                }
-                else
-                {
-                    // If node IS Dialogue Nodes.
-                    DialogueNode dialogueNode = (DialogueNode)nodes[i];
-
-                    for (int j = 0; j < dialogueNode.choiceDataList.Count; j++)
-                    {
-                        ChoiceData _choiceData = dialogueNode.choiceDataList[j];
-
-                        // Check if port has a connection
-                        if (_choiceData.inputGuid != string.Empty)
+                        for (int k = 0; k < outputPorts.Count; k++)
                         {
-                            BaseNode _1stInputNode = nodes.First(node => node.nodeGuid == _choiceData.inputGuid);
-
-                            Port _referedPort = null;
-
-                            // Check all ports in nodes outputContainer.
-                            for (int z = 0; z < dialogueNode.outputContainer.childCount; z++)
+                            if (outputPorts[k].name == edges[j].outputPortGuid)
                             {
-                                Debug.Log("dialogueNode.outputContainer.childCount = " + dialogueNode.outputContainer.childCount);
-                                Debug.Log("dialogueNode.outputContainer.name" + z + " " + dialogueNode.outputContainer[z].Q<Port>().name);
-                                Debug.Log("_choiceData.dataGuid" + z + " " + _choiceData.dataGuid);
-
-                                // Find port with its port name has the same ID as the saved choice Data Guid ID.
-                                if (dialogueNode.outputContainer[z].Q<Port>().name == _choiceData.dataGuid)
-                                {
-                                    _referedPort = dialogueNode.outputContainer[z].Q<Port>();
-                                }
+                                LinkNodesToTogether(outputPorts[k], (Port)_1stInputNode.inputContainer[0]);
                             }
-
-                            LinkNodesToTogether(_referedPort, (Port)_1stInputNode.inputContainer[0]);
                         }
                     }
                 }

@@ -14,7 +14,7 @@ namespace AG
     public class DialogueEditorWindow : EditorWindow
     {
         [Header("Config.")]
-        public G_LanguageTypeEnum selectedLanguage = G_LanguageTypeEnum.English;                    /// Current selected language in the dialogue editor window.
+        public G_LanguageTypeEnum selectedLanguage = G_LanguageTypeEnum.English;                    /// Current selected language for the dialogue boxes in the dialogue editor window.
 
         [Header("Refs.")]
         private DialContainerSO containerSO;                                                        /// Current open dialogue container in dialogue editor window.

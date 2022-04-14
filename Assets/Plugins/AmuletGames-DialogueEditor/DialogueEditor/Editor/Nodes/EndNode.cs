@@ -13,6 +13,9 @@ namespace AG
         [Header("Config.")]
         public N_EndNodeTypeEnum endNodeType = N_EndNodeTypeEnum.End;
 
+        [Header("Ports")]
+        public Port inputPort;
+
         [Header("UI Element Refs.")]
         private EnumField endNodeType_EnumField;
 
@@ -67,7 +70,7 @@ namespace AG
 
             void AddPorts()
             {
-                AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.End);
+                inputPort = AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.End);
             }
 
             void FinishNodeSetup()

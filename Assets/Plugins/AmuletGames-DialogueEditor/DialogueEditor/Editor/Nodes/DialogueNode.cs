@@ -22,6 +22,9 @@ namespace AG
         public List<LanguageGeneric<string>> String_LGs = new List<LanguageGeneric<string>>();
         public List<LanguageGeneric<AudioClip>> AudioClip_LGs = new List<LanguageGeneric<AudioClip>>();
 
+        [Header("Ports")]
+        public Port inputPort;
+
         [Header("UI Element Refs.")]
         private ObjectField audioClips_ObjectField;
         private ObjectField avatar_ObjectField;
@@ -247,7 +250,7 @@ namespace AG
 
             void AddPorts()
             {
-                AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.Dialogue);
+                inputPort = AddInputPort("Input", Port.Capacity.Multi, N_NodeTypeEnum.Dialogue);
             }
 
             void FinishNodeSetup()

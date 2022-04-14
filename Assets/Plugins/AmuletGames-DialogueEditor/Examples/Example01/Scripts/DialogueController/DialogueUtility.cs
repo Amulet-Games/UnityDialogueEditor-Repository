@@ -26,9 +26,9 @@ namespace AG
 
         public BaseNodeData GetNextNodeData(BaseNodeData _currentNodeData)
         {
-            NodeEdgeData nodeEdgeData = containerSO.nodeEdgeDataSavables.Find(edge => edge.outputGuid == _currentNodeData.nodeGuid);
+            NodeEdgeData nodeEdgeData = containerSO.nodeEdgeDataSavables.Find(edge => edge.outputNodeGuid == _currentNodeData.nodeGuid);
 
-            return GetNodeDataByGuid(nodeEdgeData.inputGuid);
+            return GetNodeDataByGuid(nodeEdgeData.inputNodeGuid);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -34,20 +35,64 @@ namespace AG
         #endregion
 
         #region Ports.
-        protected void AddOutputPort(string name, Port.Capacity capacity, N_NodeTypeEnum nodeType)
+        protected Port AddOutputPort(string name, Port.Capacity capacity, N_NodeTypeEnum nodeType)
         {
-            Port outputPort = GetPortInstance(Direction.Output, capacity);
-            outputPort.portName = name;
-            outputPort.portColor = GetPortColorByNodeType(nodeType);
-            outputContainer.Add(outputPort);
+            Port outputPort;
+
+            CreatePortIntstance();
+
+            SetupPortDetail();
+
+            AddPortToContainer();
+
+            return outputPort;
+
+            void CreatePortIntstance()
+            {
+                outputPort = GetPortInstance(Direction.Output, capacity);
+            }
+
+            void SetupPortDetail()
+            {
+                outputPort.name = Guid.NewGuid().ToString();
+                outputPort.portName = name;
+                outputPort.portColor = GetPortColorByNodeType(nodeType);
+            }
+
+            void AddPortToContainer()
+            {
+                outputContainer.Add(outputPort);
+            }
         }
 
-        protected void AddInputPort(string name, Port.Capacity capacity, N_NodeTypeEnum nodeType)
+        protected Port AddInputPort(string name, Port.Capacity capacity, N_NodeTypeEnum nodeType)
         {
-            Port inputPort = GetPortInstance(Direction.Input, capacity);
-            inputPort.portName = name;
-            inputPort.portColor = GetPortColorByNodeType(nodeType);
-            inputContainer.Add(inputPort);
+            Port inputPort;
+
+            CreatePortIntstance();
+
+            SetupPortDetail();
+
+            AddPortToContainer();
+
+            return inputPort;
+
+            void CreatePortIntstance()
+            {
+                inputPort = GetPortInstance(Direction.Input, capacity);
+            }
+
+            void SetupPortDetail()
+            {
+                inputPort.name = Guid.NewGuid().ToString();
+                inputPort.portName = name;
+                inputPort.portColor = GetPortColorByNodeType(nodeType);
+            }
+
+            void AddPortToContainer()
+            {
+                inputContainer.Add(inputPort);
+            }
         }
 
         protected Port GetPortInstance(Direction nodeDirection, Port.Capacity capacity)

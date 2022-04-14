@@ -8,6 +8,9 @@ namespace AG
 {
     public class StartNode : BaseNode
     {
+        [Header("Ports")]
+        public Port outputPort;
+
         public StartNode()
         {
             // GOAL: To be able to find in the node search bar.
@@ -38,7 +41,7 @@ namespace AG
 
             void AddPorts()
             {
-                AddOutputPort("Output", Port.Capacity.Single, N_NodeTypeEnum.Start);
+                outputPort = AddOutputPort("Output", Port.Capacity.Single, N_NodeTypeEnum.Start);
             }
 
             void FinishNodeSetup()

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -56,8 +55,11 @@ namespace AG
     [Serializable]
     public class NodeEdgeData
     {
-        public string outputGuid;       // output node is the base node where this link originate from.
-        public string inputGuid;        // input node is the target node where this link connects to.
+        public string outputNodeGuid;           // output node is the base node where this edge originate from.
+        public string inputNodeGuid;            // input node is the target node where this edge connects to.
+
+        public string outputPortGuid;           // output port is the port that this edge started.
+        public string inputPortGuid;            // output port is the port that this edge connects to.
     }
 
     [Serializable]
@@ -70,6 +72,8 @@ namespace AG
     [Serializable]
     public class StartNodeData : BaseNodeData
     {
+        [Space(10)]
+        public string outputPortGuid;
     }
 
     [Serializable]
@@ -78,9 +82,13 @@ namespace AG
         public string speakerName;
         public Sprite speakerSprite;
         public N_AvatarDirectionTypeEnum avatarDirectionType;
+
+        [Space(10)]
+        public string inputPortGuid;
+
+        [Space(10)]
         public List<LanguageGeneric<string>> String_LGs;
         public List<LanguageGeneric<AudioClip>> AudioClip_LGs;
-
         public List<ChoiceData> choiceDataList;
     }
 
@@ -88,6 +96,11 @@ namespace AG
     [Serializable]
     public class EventNodeData : BaseNodeData
     {
+        [Space(10)]
+        public string outputPortGuid;
+        public string inputPortGuid;
+
+        [Space(10)]
         public List<StringEventAddon> stringEventAddons;
         public List<ScriptableEventAddon> scriptableEventAddons;
     }
@@ -109,6 +122,10 @@ namespace AG
     [Serializable]
     public class EndNodeData : BaseNodeData
     {
+        [Space(10)]
+        public string inputPortGuid;
+
+        [Space(10)]
         public N_EndNodeTypeEnum endNodeType;
     }
 }
